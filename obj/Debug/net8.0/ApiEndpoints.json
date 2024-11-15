@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "HL7APIProject.Controllers.HL7MessageController",
+    "Method": "PostHL7Message",
+    "RelativePath": "api/HL7Message",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HL7APIProject.Models.HL7MessageRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
