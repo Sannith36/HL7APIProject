@@ -6,12 +6,18 @@ using System.Net.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5146); 
+});
+
 // Configure RabbitMQ ConnectionFactory
 builder.Services.AddSingleton<IConnectionFactory>(sp =>
 {
     var factory = new ConnectionFactory()
     {
-        HostName = "localhost",  
+        HostName = "localhost",
         UserName = "guest",
         Password = "guest"
     };
@@ -42,7 +48,7 @@ builder.Services.AddScoped<IAcknowledgmentService, AcknowledgmentService>();
 builder.Services.AddScoped<IDatabaseService, DatabaseService>();
 builder.Services.AddScoped<IRabbitMQPublisher, RabbitMQPublisher>();
 builder.Services.AddHttpClient<IHttpAcknowledgmentSender, HttpAcknowledgmentSender>();
-builder.Services.AddScoped<IMessageConsumer, MessageConsumer>();  
+builder.Services.AddScoped<IMessageConsumer, MessageConsumer>();
 
 var app = builder.Build();
 
