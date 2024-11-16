@@ -2,9 +2,18 @@ using HL7APIProject.Interfaces;
 using HL7APIProject.Services;
 using Microsoft.EntityFrameworkCore;
 using RabbitMQ.Client;
-using System.Net.Http;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure Serilog for file logging
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console() // Logs to the console
+    .WriteTo.File("app.log", rollingInterval: RollingInterval.Day) // Logs to a file, app.log
+    .CreateLogger();
+
+builder.Logging.AddSerilog(); // Adds Serilog as the logger
 
 builder.WebHost.ConfigureKestrel(options =>
 {
@@ -66,10 +75,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Commented out the HTTPS redirection line
-// app.UseHttpsRedirection();
-
 app.UseAuthorization();
 app.MapControllers();
 
+// Run the application and log activity
 app.Run();
