@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HL7APIProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efc46e6d2034ae1a8866fede4f1ba788144d32b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a80672bad48a769c3d08f926b13fae2cfdc4356d")]
 [assembly: System.Reflection.AssemblyProductAttribute("HL7APIProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HL7APIProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
