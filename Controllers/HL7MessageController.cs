@@ -1,4 +1,4 @@
-﻿using HL7APIProject.Interfaces;
+using HL7APIProject.Interfaces;
 using HL7APIProject.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +9,12 @@ namespace HL7APIProject.Controllers
     public class HL7MessageController : ControllerBase
     {
         private readonly IHL7MessageService _hl7MessageService;
+        private readonly IHttpAcknowledgmentSender _acknowledgmentSender;
 
         public HL7MessageController(IHL7MessageService hl7MessageService, IHttpAcknowledgmentSender acknowledgmentSender)
         {
             _hl7MessageService = hl7MessageService;
+            _acknowledgmentSender = acknowledgmentSender; // Ensuring it's stored if needed
         }
 
         [HttpPost]
