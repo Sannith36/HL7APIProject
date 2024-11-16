@@ -16,6 +16,14 @@ namespace HL7APIProject.Services
             var connection = connectionFactory.CreateConnection();
             _channel = connection.CreateModel();
             _acknowledgmentService = acknowledgmentService;
+
+            
+            _channel.QueueDeclare(
+                queue: "HL7_queue",  
+                durable: false,      
+                exclusive: false,     
+                autoDelete: false,    
+                arguments: null);     
         }
 
         public void ConsumeMessage()
@@ -32,7 +40,6 @@ namespace HL7APIProject.Services
                 AcknowledgeMessage(message);
             };
 
-            
             _channel.BasicConsume(queue: "HL7_queue", autoAck: true, consumer: consumer);
         }
 
