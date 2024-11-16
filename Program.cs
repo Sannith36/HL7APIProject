@@ -6,7 +6,6 @@ using System.Net.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.WebHost.ConfigureKestrel(options =>
 {
     options.ListenAnyIP(5146); 
@@ -70,7 +69,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// Commented out the HTTPS redirection line
+// app.UseHttpsRedirection();
+
 app.UseAuthorization();
 app.MapControllers();
 
