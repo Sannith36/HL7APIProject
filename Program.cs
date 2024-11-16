@@ -51,16 +51,13 @@ builder.Services.AddScoped<IMessageConsumer, MessageConsumer>();
 
 var app = builder.Build();
 
-// Trigger the RabbitMQ consumer to start consuming messages as a background task
+// Trigger the RabbitMQ consumer to start consuming messages synchronously
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
-Task.Run(() =>
+using (var scope = scopeFactory.CreateScope())
 {
-    using (var scope = scopeFactory.CreateScope())
-    {
-        var messageConsumer = scope.ServiceProvider.GetRequiredService<IMessageConsumer>();
-        messageConsumer.ConsumeMessage();
-    }
-});
+    var messageConsumer = scope.ServiceProvider.GetRequiredService<IMessageConsumer>();
+    messageConsumer.ConsumeMessage(); // Synchronous call
+}
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
