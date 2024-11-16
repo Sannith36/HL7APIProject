@@ -11486,32 +11486,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sanni\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/sannithkumarreddyp/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sanni\\source\\repos\\HL7APIProject\\HL7APIProject\\HL7APIProject.csproj",
+      "projectUniqueName": "/home/sannithkumarreddyp/HL7APIProject/HL7APIProject.csproj",
       "projectName": "HL7APIProject",
-      "projectPath": "C:\\Users\\sanni\\source\\repos\\HL7APIProject\\HL7APIProject\\HL7APIProject.csproj",
-      "packagesPath": "C:\\Users\\sanni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sanni\\source\\repos\\HL7APIProject\\HL7APIProject\\obj\\",
+      "projectPath": "/home/sannithkumarreddyp/HL7APIProject/HL7APIProject.csproj",
+      "packagesPath": "/home/sannithkumarreddyp/.nuget/packages/",
+      "outputPath": "/home/sannithkumarreddyp/HL7APIProject/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\sanni\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/sannithkumarreddyp/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11623,7 +11615,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
